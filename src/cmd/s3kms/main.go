@@ -84,7 +84,7 @@ func put(c *cli.Context) {
 	}
 
 	kmsParams := &kms.EncryptInput{
-		KeyID:     aws.String(c.GlobalString("key")),
+		KeyID:     aws.String(c.String("key")),
 		Plaintext: plaintext,
 		EncryptionContext: map[string]*string{
 			"Bucket": aws.String(bucket),
@@ -139,11 +139,6 @@ func main() {
 			EnvVar: "AWS_DEFAULT_REGION",
 			Usage:  "AWS Region name",
 		},
-		cli.StringFlag{
-			Name:   "key, k",
-			EnvVar: "AWS_KMS_KEY_ARN",
-			Usage:  "AWS KMS key ARN",
-		},
 	}
 
 	app.Commands = []cli.Command{
@@ -168,17 +163,22 @@ func main() {
 			Action: put,
 			Flags: []cli.Flag{
 				cli.StringFlag{
-					Name:   "read, r",
-					EnvVar: "AWS_ACCOUNT_ID",
-					Usage:  "AWS account ID for S3 read access",
-				},
-				cli.StringFlag{
 					Name:  "bucket, b",
 					Usage: "S3 bucket name",
 				},
 				cli.StringFlag{
+					Name:   "key, k",
+					EnvVar: "AWS_KMS_KEY_ARN",
+					Usage:  "AWS KMS key ARN",
+				},
+				cli.StringFlag{
 					Name:  "object, o",
 					Usage: "S3 object name",
+				},
+				cli.StringFlag{
+					Name:   "read, r",
+					EnvVar: "AWS_ACCOUNT_ID",
+					Usage:  "AWS account ID for S3 read access",
 				},
 			},
 		},

@@ -8,14 +8,14 @@ s3kms is a simple utility for managing encrypted files in S3 for use with
 AWS's Key Management Service (KMS). It supports two operations on an object
 in S3: get and put. Assuming you have the appropriate key permissions in KMS:
 
-`s3kms put bucket/objectKey`
+`s3kms put -k alias/devkey -b mybucket -o someobject`
 
 - Setup the appropriate encryption context in KMS
 - Read from STDIN until EOF
 - Encrypt the bytes read
 - Put the encrypted data into the specified S3 bucket
 
-`s3kms get bucket/objectKey`
+`s3kms get -b mybucket -o someobject`
 
 - Setup the appropriate encryption context in KMS
 - Get the encrypted data from S3
