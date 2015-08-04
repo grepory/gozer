@@ -1,8 +1,15 @@
-# Vinz Clortho
+# Gozer
 
-Vinz Clortho is a set of utilities that Opsee uses for key management, SSH tunneling, and general tomfoolery.
+Sub-creatures! Gozer the Gozerian, Gozer the Destructor, Volguus Zildrohar,
+the Traveller has come! Choose and perish!
 
-## s3kms
+![gozer](https://raw.github.com/opsee/gozer/master/gozer.jpg)
+
+## Vinz Clortho
+
+Vinz Clortho is a set of utilities that Opsee uses for key and secret management.
+
+### s3kms
 
 s3kms is a simple utility for managing encrypted files in S3 for use with
 AWS's Key Management Service (KMS). It supports two operations on an object
@@ -36,7 +43,8 @@ encryption. This seems to be the easiest way to configure things.
 
 ## Zuul
 
-Zuul is a set of docker containers and utilities to manage reverse SSH proxies.
+Zuul is a set of docker containers and utilities to make setting up and managing
+a lot of reverse proxies relatively easy.
 
 ## LICENSE
 
