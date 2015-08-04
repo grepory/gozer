@@ -1,6 +1,6 @@
 # Vinz Clortho
 
-Vinz Clortho is a set of utilities that Opsee uses for SSH tunneling.
+Vinz Clortho is a set of utilities that Opsee uses for key management, SSH tunneling, and general tomfoolery.
 
 ## s3kms
 
