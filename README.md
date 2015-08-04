@@ -34,6 +34,10 @@ s3kms is configured via environment variables or via the command line. See
 In practice, we use a different key for environments, as opposed to entity under
 encryption. This seems to be the easiest way to configure things.
 
+## Zuul
+
+Zuul is a set of docker containers and utilities to manage reverse SSH proxies.
+
 ## LICENSE
 
 See [License](LICENSE.md)
