@@ -10,7 +10,7 @@ the Traveller has come! Choose and perish!
 Vinz Clortho is a set of utilities that Opsee uses for key and secret management,
 authentication, and other hijinks. It is largely a runtime environment for Zuul.
 
-See [Vinz Clortho](vinz-clorth/README.md)
+See [Vinz Clortho](vinz-clortho/README.md)
 
 ## Zuul
 
