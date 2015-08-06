@@ -1,6 +1,0 @@
-FROM quay.io/opsee/vinz
-RUN apk --update add openssh bash
-ADD sshd_config /etc/ssh/sshd_config
-ADD start.sh /start.sh
-
-CMD ["/start.sh"]
