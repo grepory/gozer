@@ -1,0 +1,35 @@
+port 1194
+proto tcp
+dev tun
+
+dh /gozer/state/dh1024.pem
+ca /gozer/state/ca.crt
+cert /gozer/state/server.crt
+key /gozer/state/server.key
+tls-auth /gozer/state/tls-auth.key
+
+auth-user-pass-verify "/gozer/bin/auth -u https://vape.opsy.co/bastions/authenticate" via-file
+script-security 3 system
+username-as-common-name
+tmp-dir /dev/shm
+status /gozer/state/openvpn-status.log
+client-cert-not-required
+
+max-clients 254
+
+max-routes-per-client 1
+ifconfig-pool-persist ipp.txt
+persist-key
+persist-tun
+
+push "route 172.31.0.0 255.255.240.0"
+push "route 172.31.16.0 255.255.240.0"
+duplicate-cn
+
+# Ping once every 10 seconds, assuming dead after 60 seconds.
+# Should figure out a way to measure the effectiveness of this setting.
+keepalive 10 60
+
+log-append /dev/stdout
+# logging verbosity
+verb 4

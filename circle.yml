@@ -1,0 +1,21 @@
+machine:
+  services:
+    - docker
+  environment:
+    ci: "true"
+dependencies:
+  override:
+    - docker info
+    - go version
+    - sudo pip install awscli
+    - aws s3 cp s3://opsee-releases/go/zuul/auth bin/auth
+test:
+  override:
+    - docker build -t quay.io/opsee/gozer:latest .
+deployment:
+  quay:
+    branch: master
+    owner: opsee
+    commands:
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USERNAME -p $DOCKER_PASSWORD quay.io
+      - docker push quay.io/opsee/gozer:latest

@@ -5,20 +5,13 @@ the Traveller has come! Choose and perish!
 
 ![gozer](https://raw.github.com/opsee/gozer/master/gozer.jpg)
 
-## Vinz Clortho
+## Gozer, Zuul, and Vinz Clortho
 
-Vinz Clortho is a set of utilities that Opsee uses for key and secret management,
-authentication, and other hijinks. It is largely a runtime environment for Zuul.
+The three of these projects make up Opsee's bastion authentication
+infrastructure. Gozer's responsibility is for communicating with Vape and
+registering the Bastion with Opsee, it does this using various components
+from both Vinz Clortho and Zuul.
 
-See [Vinz Clortho](vinz-clortho/README.md)
-
-## Zuul
-
-Zuul is a set of docker containers and utilities to make setting up and managing
-a lot of reverse proxies relatively easy.
-
-See [Zuul](zuul/README.md)
-
-## LICENSE
-
-See [License](LICENSE.md)
+See also:
+- [Vinz Clortho](https://github.com/opsee/vinz-clortho)
+- [Zuul](https://github.com/opsee/zuul)
