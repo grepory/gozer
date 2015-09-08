@@ -9,7 +9,7 @@ if [ ! -d /gozer/state ]; then
 fi
 
 AWS=$(curl --connect-timeout 2 http://169.254.169.254/latest/meta-data/ 2>&1 /dev/null; echo $?)
-if [ $AWS -eq 0]; then
+if [[ $AWS == 0 ]]; then
   eval "$(/opt/bin/ec2-env)"
 fi
 
