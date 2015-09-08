@@ -1,7 +1,7 @@
 FROM quay.io/opsee/vinz
 MAINTAINER Greg Poirier <greg@opsee.co>
 
-ENV PATH="/gozer/bin:/bin:/sbin:/usr/bin:/usr/sbin:/opt/bin"
+ENV PATH="/gozer/bin:/bin:/sbin:/usr/bin:/usr/sbin:/opt/bin:/usr/local/bin:/usr/local/sbin"
 
 RUN apk --update add openvpn bash curl && \
     mkdir -p /gozer/bin && \
