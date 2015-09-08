@@ -7,8 +7,6 @@ dependencies:
   override:
     - docker info
     - go version
-    - sudo pip install awscli
-    - aws s3 cp s3://opsee-releases/go/zuul/auth bin/auth
 test:
   override:
     - docker build -t quay.io/opsee/gozer:latest .
