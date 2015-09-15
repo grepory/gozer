@@ -24,8 +24,6 @@ persist-tun
 
 push "route 172.31.0.0 255.255.240.0"
 push "route 172.31.16.0 255.255.240.0"
-push "dhcp-option DNS 172.31.0.2"
-
 duplicate-cn
 
 # Ping once every 10 seconds, assuming dead after 60 seconds.
