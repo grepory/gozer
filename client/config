@@ -1,7 +1,7 @@
 client
 
 dev tun
-proto tcp
+proto udp
 remote bastion.opsee.co 1194
 tls-client
 ca /gozer/state/ca.crt
@@ -15,6 +15,6 @@ user gozer
 group gozer
 
 persist-key
-persist-tun
 
 verb 4
+mssfix 1400
