@@ -9,4 +9,4 @@ EOF
 chown gozer:gozer /dev/shm/up
 chmod 600 /dev/shm/up
 
-openvpn --config /gozer/client/config
+openvpn --config /gozer/client/config --remote ${VPN_REMOTE} 1194

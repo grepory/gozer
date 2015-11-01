@@ -10,4 +10,4 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
-/usr/sbin/openvpn --config /gozer/server/config --server $1 255.255.255.0
+/usr/sbin/openvpn --config /gozer/server/config --auth-user-pass-verify "/gozer/bin/auth -u ${AUTH_URL}" via-file --server $1 255.255.255.0

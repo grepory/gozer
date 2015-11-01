@@ -8,7 +8,6 @@ cert /gozer/state/server.crt
 key /gozer/state/server.key
 tls-auth /gozer/state/tls-auth.key
 
-auth-user-pass-verify "/gozer/bin/auth -u https://vape.opsy.co/bastions/authenticate" via-file
 script-security 3 system
 username-as-common-name
 tmp-dir /dev/shm
