@@ -2,7 +2,6 @@ client
 
 dev tun
 proto udp
-remote bastion.opsee.co 1194
 tls-client
 ca /gozer/state/ca.crt
 tls-auth /gozer/state/tls-auth.key
