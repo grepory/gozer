@@ -6,6 +6,7 @@ ENV PATH="/gozer/bin:/bin:/sbin:/usr/bin:/usr/sbin:/opt/bin:/usr/local/bin:/usr/
 RUN apk --update add openvpn bash curl && \
     mkdir -p /gozer/bin && \
     mkdir -p /gozer/state && \
+    mkdir -p /gozer/common && \
     curl -Lo /gozer/common/ca.crt https://s3-us-west-1.amazonaws.com/opsee-public-keys/ca.crt && \
     ln -sf /gozer/server/server.sh /gozer/bin/server && \
     ln -sf /gozer/client/client.sh /gozer/bin/client && \
