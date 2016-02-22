@@ -8,11 +8,6 @@ if [ ! -d /gozer/state ]; then
   mkdir -p /gozer/state
 fi
 
-AWS=$(curl --connect-timeout 2 http://169.254.169.254/latest/meta-data/ 2>&1 /dev/null; echo $?)
-if [[ $AWS == 0 ]]; then
-  eval "$(/opt/bin/ec2-env)"
-fi
-
 get_encrypted_object() {
   local bucket=opsee-keys
   local obj=$1
@@ -32,7 +27,3 @@ get_encrypted_object() {
     exit 1
   fi
 }
-
-# get_encrypted_object dev/ca.crt /gozer/state/ca.crt
-curl -Lo /gozer/state/ca.crt https://s3-us-west-1.amazonaws.com/opsee-public-keys/ca.crt
-# get_encrypted_object dev/tls-auth.key /gozer/state/tls-auth.key

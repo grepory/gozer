@@ -2,11 +2,11 @@ port 1194
 proto udp
 dev tun
 
-dh /gozer/state/dh1024.pem
-ca /gozer/state/ca.crt
-cert /gozer/state/server.crt
-key /gozer/state/server.key
-tls-auth /gozer/state/tls-auth.key
+dh /gozer/common/dh1024.pem
+ca /gozer/common/ca.crt
+cert /gozer/server/server.crt
+key /gozer/server/server.key
+tls-auth /gozer/common/tls-auth.key
 
 script-security 3 system
 username-as-common-name

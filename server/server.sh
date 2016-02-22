@@ -2,8 +2,8 @@
 
 . /gozer/common/common.sh
 
-get_encrypted_object dev/opsee-key.pem /gozer/state/server.key
-get_encrypted_object dev/opsee.crt /gozer/state/server.crt
+get_encrypted_object dev/opsee-key.pem /gozer/server/server.key
+get_encrypted_object dev/opsee.crt /gozer/server/server.crt
 
 if [ -z "$1" ]; then
   echo "Must specify a /24 network to start a server."

@@ -3,8 +3,8 @@ client
 dev tun
 proto udp
 tls-client
-ca /gozer/state/ca.crt
-tls-auth /gozer/state/tls-auth.key
+ca /gozer/common/ca.crt
+tls-auth /gozer/common/tls-auth.key
 auth-user-pass /dev/shm/up
 script-security 3 system
 route-up /gozer/client/ip.sh
