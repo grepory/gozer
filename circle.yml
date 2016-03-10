@@ -9,11 +9,11 @@ dependencies:
     - go version
 test:
   override:
-    - docker build -t quay.io/opsee/gozer:latest .
+    - docker build -t quay.io/opsee/gozer:$(CIRCLE_SHA1) .
 deployment:
   quay:
     branch: master
     owner: opsee
     commands:
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USERNAME -p $DOCKER_PASSWORD quay.io
-      - docker push quay.io/opsee/gozer:latest
+      - docker push quay.io/opsee/gozer:$(CIRCLE_SHA1)
