@@ -16,4 +16,6 @@ deployment:
     owner: opsee
     commands:
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USERNAME -p $DOCKER_PASSWORD quay.io
+      - docker tag quay.io/opsee/gozer:$CIRCLE_SHA1 quay.io/opsee/gozer:master
       - docker push quay.io/opsee/gozer:$CIRCLE_SHA1
+      - docker push quay.io/opsee/gozer:master

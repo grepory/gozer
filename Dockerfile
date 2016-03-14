@@ -1,9 +1,9 @@
-FROM quay.io/opsee/vinz
+FROM quay.io/opsee/vinz:master
 MAINTAINER Greg Poirier <greg@opsee.co>
 
 ENV PATH="/gozer/bin:/bin:/sbin:/usr/bin:/usr/sbin:/opt/bin:/usr/local/bin:/usr/local/sbin"
 
-RUN apk --update add openvpn bash curl && \
+RUN apk --update add openvpn bash openssl ca-certificates curl && \
     mkdir -p /gozer/bin && \
     mkdir -p /gozer/state && \
     mkdir -p /gozer/common && \
